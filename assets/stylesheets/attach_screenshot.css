@@ -40,7 +40,7 @@ span.screen_thumb .st2 {
   background-color: #F7F7F7;
   background-position: right;
   background-repeat: no-repeat;
-  background-image: url(/plugin_assets/redmine_attach_screenshot/images/capture-24x24.png);
+  background-image: url(../images/capture-24x24.png);
 }
 
 .screenshot_button span {

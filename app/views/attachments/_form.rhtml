@@ -1,3 +1,6 @@
+<%
+baseurl = Redmine::Utils.relative_url_root
+-%>
 <% content_for :header_tags do %>
     <%= stylesheet_link_tag 'attach_screenshot', :plugin => 'redmine_attach_screenshot' %>
     <%= javascript_include_tag 'attach_screenshot', :plugin => 'redmine_attach_screenshot' %>
@@ -70,12 +73,12 @@
 
         var b = document.createElement("input");
         b.type = "image";
-        b.src = "/images/delete.png"
+        b.src = "<%= baseurl -%>/images/delete.png"
         b.setAttribute("onClick", "deleteAttachScreen('" + fileId + "'); return false;");
 
 	var i = document.createElement("input");
 	i.type = "image";
-	i.src = "/images/lightning.png";
+	i.src = "<%= baseurl -%>/images/lightning.png";
 	i.setAttribute("onClick", "InsertAttachScreen('" + fileId + "'); return false;");
 
         var d = document.createElement("input");
