@@ -4,7 +4,6 @@ class AttachScreenshotController < ApplicationController
   unloadable
   skip_before_filter :require_login
   skip_before_filter :verify_authenticity_token
-  accept_key_auth :index
 
   def index
     path = "#{RAILS_ROOT}/tmp/"

@@ -1,5 +1,4 @@
 require 'account_controller'
-require 'ftools'
 
 module AttachScreenshotPlugin
   class Hooks < Redmine::Hook::ViewListener
@@ -54,9 +53,9 @@ module AttachScreenshotPlugin
               journal.details << JournalDetail.new(:property => 'attachment',
                                                    :prop_key => a.id,
                                                    :value => a.filename)
-              journal[:notes] = journal[:notes].gsub("!" + key + "!", "!" + url_for (:controller => 'attachments', :id=> a, :filename => a.filename, :action => "show" ) +"!")
+              journal[:notes] = journal[:notes].gsub("!" + key + "!", "!" + url_for(:controller => 'attachments', :id=> a, :filename => a.filename, :action => "show" ) +"!")
             else
-              issue[:description] = issue[:description].gsub("!" + key + "!", "!" + url_for (:controller => 'attachments', :id=> a, :filename => a.filename, :action => "show" ) +"!")
+              issue[:description] = issue[:description].gsub("!" + key + "!", "!" + url_for(:controller => 'attachments', :id=> a, :filename => a.filename, :action => "show" ) +"!")
               issue.save()
             end
           end
