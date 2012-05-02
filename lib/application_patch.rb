@@ -1,5 +1,4 @@
 require 'account_controller'
-require 'ftools'
 
 module AttachScreenshotPlugin
   module ApplicationControllerPatch
