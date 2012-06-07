@@ -6,6 +6,7 @@ class AttachScreenshotController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
   def index
+    Rails.logger.info("AttachScreenshotController#index")
     path = "#{Rails.root}/tmp/"
     if request.post?
       date = DateTime.now.strftime("%H%M%S")
